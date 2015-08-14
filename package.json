@@ -1,0 +1,24 @@
+{
+  "name": "sgb-screen-password-recovery",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/sgb-screen-password-recovery.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SYNERGY-GB/sgb-screen-password-recovery.git"
+  },
+  "author": "Luis Miglietti <luis.miglietti@synergy-gb.com>",
+  "license": "Propietary",
+  "bugs": {
+    "url": "https://github.com/SYNERGY-GB/sgb-screen-password-recovery/issues"
+  },
+  "homepage": "https://github.com/SYNERGY-GB/sgb-screen-password-recovery",
+  "devDependencies": {
+    "browserify": "^9.0.3",
+    "gulp": "^3.9.0",
+    "vinyl-transform": "^1.0.0"
+  }
+}
