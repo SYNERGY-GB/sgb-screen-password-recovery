@@ -1,13 +1,15 @@
 'use strict';
 
 angular.module('megazord')
-    .directive('mzClass', [function(){
+    .directive('mzClass', ['lodash', function(_){
        return {
            restrict: 'A',
            link: function(scope, el, attrs) {
-               var className = attrs.mzClass;
+               var classNames = attrs.mzClass.split(' ');
                el.addClass(className);
-               el.addClass(scope.screenName + '-' + className);
+               _.forEach(classNames, function(className){
+                   el.addClass(scope._screenParams.screenName.replace('.', '_') + '-' + className);
+               });
            }
        }
     }]);

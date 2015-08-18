@@ -43,4 +43,5 @@ angular.module('megazord', ['ngLodash', 'pascalprecht.translate']);
 
 require('./router');
 require('./classDirective');
+require('./templateDirective');
 require('./screen');

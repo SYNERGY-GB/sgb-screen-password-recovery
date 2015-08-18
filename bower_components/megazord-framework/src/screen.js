@@ -10,11 +10,11 @@ angular.module('megazord')
  *
  */
 .provider('_screen', function() {
-    this.$get = [function() {
+    this.$get = ['lodash', function(_) {
         return {
             initialize: function($scope, _screenParams) {
-                $scope.screenName = _screenParams.screenName;
-                $scope.title = _screenParams.title || _screenParams.screenName;
+                $scope._screenParams = _screenParams;
+                _.defaults(_screenParams, { title: _screenParams.screenName });
             }
         };
     }];

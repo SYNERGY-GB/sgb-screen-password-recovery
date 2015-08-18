@@ -2,16 +2,26 @@
 
 var gulp = require('gulp');
 var browserify = require('browserify');
-var transform = require('vinyl-transform');
+var path = require('path');
+var source = require('vinyl-source-stream');
+var buffer = require('vinyl-buffer');
+var sourcemaps = require('gulp-sourcemaps');
+var reactify = require('reactify');
+var uglify = require('gulp-uglify');
 
-gulp.task('build', function(){
-
-    var browserified = transform(function(filename) {
-        var b = browserify(filename);
-        return b.bundle();
+gulp.task('build', function () {
+    var filename = './src/megazord.js';
+    var b = browserify({
+        entries: filename,
+        transform: [reactify]
     });
 
-    return gulp.src('src/megazord.js')
-        .pipe(browserified)
+    return b.bundle()
+        .pipe(source('megazord.js'))
+        .pipe(buffer())
+        .pipe(sourcemaps.init({loadMaps: true}))
+        .pipe(uglify())
+        .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest('./dist/'));
 });
+

@@ -19,18 +19,17 @@
     "tests"
   ],
   "dependencies": {
-    "ionic": "driftyco/ionic-bower#1.0.0-beta.14",
-    "ng-lodash": "~0.2.0",
-    "angular-translate": "~2.6.1"
+    "ng-lodash": "~0.2.3",
+    "ionic": "~1.0.1",
+    "angular-translate": "~2.7.2"
   },
-  "_release": "0c82719c5e",
+  "_release": "9f03e84294",
   "_resolution": {
     "type": "branch",
-    "branch": "master",
-    "commit": "0c82719c5ecec6c416f5874a037b8da2413341d7"
+    "branch": "1.0",
+    "commit": "9f03e8429410afd2739ba93d99d742a47038070f"
   },
   "_source": "git@github.com:SYNERGY-GB/megazord-framework.git",
-  "_target": "master",
-  "_originalSource": "git@github.com:SYNERGY-GB/megazord-framework.git",
-  "_direct": true
+  "_target": "1.0",
+  "_originalSource": "git@github.com:SYNERGY-GB/megazord-framework.git"
 }
