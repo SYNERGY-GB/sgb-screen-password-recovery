@@ -6,20 +6,14 @@ angular.module('sgb-screen-password-recovery', ['megazord'])
         //Screen template parameters
         _screen.initialize($scope, _screenParams);
 
-        $scope.goToQuestion = function() {
-            _router.fireEvent({name: 'goToQuestion', 
-                               params: {}
-            });
-        }
-
-        $scope.finishRecovery = function() {
-            _router.fireEvent({name: 'finishRecovery', 
+        $scope.goTo = function() {
+            _router.fireEvent({name: 'goTo', 
                                params: {}
             });
         }
 
         $scope.extraParams = {
-            goToQuestion : $scope.goToQuestion,
+            goTo : $scope.goTo,
             finishRecovery : $scope.finishRecovery
         };
 
