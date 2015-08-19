@@ -5,6 +5,7 @@ angular.module('sgb-screen-password-recovery', ['megazord'])
 
         //Screen template parameters
         _screen.initialize($scope, _screenParams);
+        $scope.data = $stateParams.data; 
 
         $scope.recover = {}; 
         
@@ -44,6 +45,7 @@ angular.module('sgb-screen-password-recovery', ['megazord'])
 
             $injector.invoke(recoverHandler, null, { username: $scope.recover.username })
                 .then(function(result){
+                    console.log('test')
                     /* If user valid do something */
                     if(result) {
                         console.log("Success");
