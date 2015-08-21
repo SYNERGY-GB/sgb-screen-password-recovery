@@ -52,11 +52,6 @@ angular.module('sgb-screen-password-recovery', ['megazord'])
                 });
         };
 
-        //Extra params to include in templateDirective
-        $scope.extraParams = {
-            goTo : $scope.goTo
-        };
-
     }]);
 
 
