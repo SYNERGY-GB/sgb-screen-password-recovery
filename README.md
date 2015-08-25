@@ -16,7 +16,8 @@ Esta pantalla permite a un usuario recuperar su contraseña.
 
 Los parámetros permiten modificar el nombre de los campos según los requerimientos de la aplicación. Tambíen se puede indicar una expresión regular para validar que el campo con la información usuario cumple con el formato
 
-- **templateType**: función o nombre que permita identificar el template a utilizar para la pantalla, por ejemplo: "@digitel"
+- **templateType**: función o nombre que permita identificar el template a utilizar para la pantalla.
+- **usernameRegexp** : expresión regular que valida el usuario
 
 
 <h3>Diseño</h3>
