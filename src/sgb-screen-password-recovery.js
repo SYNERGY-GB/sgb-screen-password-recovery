@@ -1,13 +1,15 @@
 'use strict';
 angular.module('sgb-screen-password-recovery', ['megazord'])
-    .controller('sgb-screen-password-recovery-controller', ['_router', '_screenParams', '_screen', '$injector', '$stateParams', '$scope', '$q','$ionicPopup', 
-                function(_router, _screenParams, _screen, $injector, $stateParams, $scope, $q, $ionicPopup){
+    .controller('sgb-screen-password-recovery-controller', ['_router', '_screenParams', '_screen', '$injector', '$stateParams', '$scope', '$q',
+                function(_router, _screenParams, _screen, $injector, $stateParams, $scope, $q){
 
         //Screen template parameters
         _screen.initialize($scope, _screenParams);
         $scope.data = $stateParams.data; 
 
-        $scope.recover = {}; 
+        $scope.recover = {
+            username: ''
+        }; 
         
         var defaultRecoverHandler = function(username) {
             //TODO: Default to rest api call instead of this dummy implementation
@@ -24,23 +26,20 @@ angular.module('sgb-screen-password-recovery', ['megazord'])
             return (exp.test(field));
         };
 
-        //Fire event to go to next screen
 
+        //Fire event to go to next screen
         $scope.goTo = function(event) {
             _router.fireEvent({name: event, 
                                params: {}
             });
         };
 
-
-        //Dummy implementation
         $scope.validateUser = function() {
 
             if (!($scope.checkField($scope._screenParams.usernameRegexp, $scope.recover.username))) {
                 return; 
             }
 
-            console.log('passRegexp');
             $injector.invoke(recoverHandler, null, { username: $scope.recover.username })
                 .then(function(result){
                     /* If user valid do something */
@@ -51,7 +50,8 @@ angular.module('sgb-screen-password-recovery', ['megazord'])
                         $scope.goTo('goToFail'); 
 
                     }
-                });
+                }
+            );
         };
 
     }]);
