@@ -19,20 +19,19 @@ angular.module('sgb-screen-password-recovery', ['megazord'])
         var recoverHandler = (_screenParams.recoverHandler?_screenParams.recoverHandler : defaultRecoverHandler);
 
         $scope.checkField = function (regexp, field) {
-            console.log(regexp, field);
-            if (!field || !regexp) return true; 
-            if(regexp) {
-                var exp = new RegExp(regexp);
-                return (exp.test(field));
-            }
+            if (!regexp) return true; 
+            var exp = new RegExp(regexp);
+            return (exp.test(field));
         };
 
         //Fire event to go to next screen
-        $scope.goTo = function() {
-            _router.fireEvent({name: 'goTo', 
+
+        $scope.goTo = function(event) {
+            _router.fireEvent({name: event, 
                                params: {}
             });
         };
+
 
         //Dummy implementation
         $scope.validateUser = function() {
@@ -41,11 +40,16 @@ angular.module('sgb-screen-password-recovery', ['megazord'])
                 return; 
             }
 
+            console.log('passRegexp');
             $injector.invoke(recoverHandler, null, { username: $scope.recover.username })
                 .then(function(result){
                     /* If user valid do something */
                     if(result) {
-                        $scope.goTo(); 
+                        $scope.goTo('goTo'); 
+                    } else {
+                    /* If user invalid do something */
+                        $scope.goTo('goToFail'); 
+
                     }
                 });
         };
