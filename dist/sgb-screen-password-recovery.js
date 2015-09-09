@@ -15,7 +15,7 @@ angular.module('sgb-screen-password-recovery', ['megazord'])
         var defaultRecoverHandler = function(username) {
             //TODO: Default to rest api call instead of this dummy implementation
             var result = $q.defer();
-            result.resolve(username == '04121111111');
+            result.resolve(username == '1111');
             return result.promise;
         };
 
