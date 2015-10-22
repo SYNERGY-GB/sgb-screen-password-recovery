@@ -23,11 +23,15 @@ angular.module('sgb-screen-password-recovery', ['megazord'])
         };
 
         $scope.validateUser = function() {
+            var data = {
+                username: $scope.recover.username
+            }
+
+            if ($scope.data.processId) data.processId = $scope.data.processId; 
+
             _router.fireEvent({
                 name: 'validateRecover', 
-                params: {
-                    username: $scope.recover.username
-                }
+                params: data
             });     
         };
 
