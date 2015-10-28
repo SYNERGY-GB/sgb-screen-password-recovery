@@ -1,7 +1,7 @@
 'use strict';
 angular.module('sgb-screen-password-recovery', ['megazord'])
-    .controller('sgb-screen-password-recovery-controller', ['_router', '_screenParams', '_screen', '_data', '$scope','$http',
-                function(_router, _screenParams, _screen, _data, $scope, $http){
+    .controller('sgb-screen-password-recovery-controller', ['_router', '_screenParams', '_screen', '_data', '$scope','$ionicHistory',
+                function(_router, _screenParams, _screen, _data, $scope, $ionicHistory){
 
         //Screen template parameters
         _screen.initialize($scope, _screenParams);
@@ -20,6 +20,10 @@ angular.module('sgb-screen-password-recovery', ['megazord'])
                 params: {}
             });
         };
+
+        $scope.goBack = function() {
+            $ionicHistory.goBack(); 
+        }
 
         $scope.validateUser = function() {
             var data = {
