@@ -22,10 +22,7 @@ angular.module('sgb-screen-password-recovery', ['megazord'])
         };
 
         $scope.goBack = function() {
-            $ionicHistory.nextViewOptions({
-                historyRoot: true
-            })
-            $scope.goTo('goBack'); 
+            $ionicHistory.goBack(); 
         }
 
         $scope.validateUser = function() {
