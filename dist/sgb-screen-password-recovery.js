@@ -5,10 +5,9 @@ angular.module('sgb-screen-password-recovery', ['megazord'])
                 function(_router, _screenParams, _screen, _data, $scope, $ionicHistory){
 
         //Screen template parameters
-        _screen.initialize($scope, _screenParams);
-        $scope.data = _data; 
-
         $scope.$on('$ionicView.beforeEnter', function(){
+            _screen.initialize($scope, _screenParams);
+            $scope.data = _data; 
             $scope.recover = {
                 username: ''
             }; 
