@@ -18,6 +18,6 @@
     "tests"
   ],
   "dependencies": {
-   "megazord-framework": "git@github.com:SYNERGY-GB/megazord-framework.git#~1.0"
+   "megazord-framework": "git@github.com:SYNERGY-GB/megazord-framework.git#1.0"
   }
 }
