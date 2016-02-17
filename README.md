@@ -19,6 +19,24 @@ Los parámetros permiten modificar el nombre de los campos según los requerimie
 - **templateType**: función o nombre que permita identificar el template a utilizar para la pantalla.
 - **usernameRegexp** : expresión regular que valida el usuario
 
+<h3>Ejemplo de configuracion del archivo screen.ts</h3>
+<pre>
+passwordRecovery":{
+    type:'sgb-screen-password-recovery',
+        dataSource:{
+        type: 'sgb-datasource-json#1.0',
+        params: {
+            path: 'archivoDePrueba.JSON'
+        }
+    },
+    params: {
+        title:"Hello there! I'm the title",
+        usernameRegexp :"[^a-zA-Z0-9]"
+    }
+}
+</pre>
+    
+
 
 <h3>Diseño</h3>
 
